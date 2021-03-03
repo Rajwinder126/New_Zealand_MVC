@@ -1,0 +1,65 @@
+﻿@model IEnumerable<New_Zealand_MVC.Models.Booking>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.No_of_tickets)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket_price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Famous_Hotel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Attraction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.No_of_tickets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ticket_price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.customer.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Famous_Hotel.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attraction.Attraction_Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event.Event_Address)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
