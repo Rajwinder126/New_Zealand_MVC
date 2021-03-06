@@ -8,28 +8,30 @@
 
 <h4>Event</h4>
 <hr />
+<!--this page gives the information about how to found a event this page-->
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Event_Name" class="control-label"></label>
+                <label asp-for="Event_Name" class="control-label">Event Name</label>
                 <input asp-for="Event_Name" class="form-control" />
                 <span asp-validation-for="Event_Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Event_Place" class="control-label"></label>
+                <label asp-for="Event_Place" class="control-label">Event Place</label>
                 <input asp-for="Event_Place" class="form-control" />
                 <span asp-validation-for="Event_Place" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Event_Address" class="control-label"></label>
+                <label asp-for="Event_Address" class="control-label">Event Address</label>
                 <input asp-for="Event_Address" class="form-control" />
                 <span asp-validation-for="Event_Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Event_Price" class="control-label"></label>
+                <label asp-for="Event_Price" class="control-label">Event Price</label>
                 <input asp-for="Event_Price" class="form-control" />
                 <span asp-validation-for="Event_Price" class="text-danger"></span>
             </div>

@@ -6,14 +6,14 @@
 
 <h1>Create</h1>
 
-<h4>Famous_Hotel</h4>
+<h4>Famous Hotel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Hotal_Name" class="control-label"></label>
+                <label asp-for="Hotal_Name" class="control-label">Hotal Name</label>
                 <input asp-for="Hotal_Name" class="form-control" />
                 <span asp-validation-for="Hotal_Name" class="text-danger"></span>
             </div>
@@ -23,12 +23,12 @@
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Room_Price" class="control-label"></label>
+                <label asp-for="Room_Price" class="control-label">Room Price</label>
                 <input asp-for="Room_Price" class="form-control" />
                 <span asp-validation-for="Room_Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Room_Type" class="control-label"></label>
+                <label asp-for="Room_Type" class="control-label">Room Type</label>
                 <input asp-for="Room_Type" class="form-control" />
                 <span asp-validation-for="Room_Type" class="text-danger"></span>
             </div>

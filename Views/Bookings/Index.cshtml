@@ -3,63 +3,78 @@
 @{
     ViewData["Title"] = "Index";
 }
+<!--this page make for giving the information about Booking And add a image in this page-->
 
 <h1>Index</h1>
+<div class="cl">&nbsp;</div>
+<a href="#">
+    <img src="css/images/AUCKLAND.jpg" alt="" />
+    <div class="cl">&nbsp;</div>
+    </div>
+    <P>
+        In this sense, successful event ticketing is the system of integrated solutions, which serves for providing easy access to the event,Attractions and Hotels.
+        The key aims of using event ticketing solutions are the following: Keeping track of registrations.
+        ... Automating the process of event entering. Creating a smooth attendance experiences.
+        A hotel reservation system works by processing secure online reservations made through a hotel's website.
+    </P>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.No_of_tickets)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket_price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.customer)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Famous_Hotel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Attraction)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Event)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.No_of_tickets)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ticket_price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.customer.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Famous_Hotel.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Attraction.Attraction_Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Event.Event_Address)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+    </div>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    No of tickets
+                </th>
+                <th>
+                    Ticket price
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.customer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Famous_Hotel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Attraction)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Event)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.No_of_tickets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ticket_price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.customer.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Famous_Hotel.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Attraction.Attraction_Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event.Event_Address)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

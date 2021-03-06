@@ -3,51 +3,65 @@
 @{
     ViewData["Title"] = "Index";
 }
+<!--this page make for giving the information about Events And add a image in this page-->
 
 <h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Event_Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Event_Place)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Event_Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Event_Price)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Event_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Event_Place)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Event_Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Event_Price)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="cl">&nbsp;</div>
+<a href="#">
+    <img src="css/images/events.jpg" alt="" />
+    <div class="cl">&nbsp;</div>
+    </div>
+    <P>
+        Whether you're into beer, culture, sport, or all of the above,add a New Zealand event to your itinerary.
+        New Zealand may be a young country, but the diverse wealth of Maori culture, performing arts, literature,
+        museums and art galleries will leave even the most fervent arts and culture buffs completely satisfied.
+        Whether you choose to participate or spectate, New Zealand is a sports mad country and you can lap it all up.
+        Join the locals at a game of rugby or relax on a world-class golf course.
+    </P>
+    </div>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Event Name
+                </th>
+                <th>
+                    Event Place
+                </th>
+                <th>
+                    Event Address
+                </th>
+                <th>
+                    Event Price
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event_Place)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event_Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event_Price)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

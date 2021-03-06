@@ -3,63 +3,87 @@
 @{
     ViewData["Title"] = "Index";
 }
+<!--this page make for giving the information about Attractions And add a image in this page-->
 
 <h1>Index</h1>
+<div class="cl">&nbsp;</div>
+<a href="#">
+    <img src="css/images/ATTRACTION.jpg" alt="" />
+    <div class="cl">&nbsp;</div>
+    </div>
+    <P>
+        The Bay of Islands is a subtropical micro-region known for its stunning beauty & history.
+        For those that love beaches and water activities, it's paradise.
+        A three-hour drive or 35 minute flight north of Auckland, the Bay of Islands encompasses 144 islands between Cape Brett and the Purerua Peninsula and includes the boutique towns of Opua, Paihia, Russell and Kerikeri.
+        A choice of tour operators in the region offer excellent trips by sea or air to spectacular Cape Brett and the ‘Hole in the Rock’ on Piercy Island.
+        A passenger ferry service runs between Paihia and Russell, while a vehicle ferry provides a link between Opua and Russell.
+        On land, enjoy beautiful river and seaside walking tracks or encounter the mighty Kauri Tree in pristine subtropical rainforest.
+        Embark on a voyage of discovery and enjoy the beauty of this area when you join a daily cruise, charter a yacht or hire a sea kayak.
+        Once you’re around Tapeka Point - just north of Russell - you’ll enter a maritime adventure playground with an abundance of wildlife including penguins, dolphins, marlin, whales, gannets and more.
+        Many of the islands here have walking tracks and there is a camping ground on Urupukapuka Island (managed by the Department of Conservation(opens in new window)).
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Attraction_Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Attraction_Place)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Attraction_Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Attraction_Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Attraction_Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Attraction_Open_Hours)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Attraction_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Attraction_Place)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Attraction_Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Attraction_Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Attraction_Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Attraction_Open_Hours)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+
+    </P>
+
+
+    </div>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Attraction Name
+                </th>
+                <th>
+                    Attraction Place
+                </th>
+                <th>
+                    Attraction Address
+                </th>
+                <th>
+                    Attraction Description
+                </th>
+                <th>
+                    Attraction Price
+                </th>
+                <th>
+                    Attraction Open Hours
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Attraction_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Attraction_Place)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Attraction_Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Attraction_Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Attraction_Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Attraction_Open_Hours)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
