@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using New_Zealand_MVC.Data;
 
 namespace New_Zealand_MVC.Migrations
 {
     [DbContext(typeof(New_Zealand_MVCDatabase))]
-    partial class New_Zealand_MVCDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20210309230748_New_Zealand")]
+    partial class New_Zealand
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

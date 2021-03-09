@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "Index";
 }
-<!--this page make for giving the information about Booking And add a image in this page-->
 
 <h1>Index</h1>
 <div class="cl">&nbsp;</div>
@@ -12,10 +11,16 @@
     <div class="cl">&nbsp;</div>
     </div>
     <P>
-        In this sense, successful event ticketing is the system of integrated solutions, which serves for providing easy access to the event,Attractions and Hotels.
-        The key aims of using event ticketing solutions are the following: Keeping track of registrations.
-        ... Automating the process of event entering. Creating a smooth attendance experiences.
-        A hotel reservation system works by processing secure online reservations made through a hotel's website.
+        Hotels in New Zealand come in all shapes, sizes and personalities.
+        From budget to luxury, there are hundreds of hotels to choose from around the country.
+        Hotel accommodation provides a range of facilities which will generally include restaurants/cafes, bars, gyms, and services including valet car parking.
+        New Zealand hotels are of a consistently high standard.
+        Make sure you book a Qualmark star rated property if quality, good service and facilities are important to you.
+
+       
+
+
+
     </P>
 
 
@@ -36,7 +41,7 @@
                     @Html.DisplayNameFor(model => model.customer)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Famous_Hotel)
+                    @Html.DisplayNameFor(model => model.Hotel)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Attraction)
@@ -61,7 +66,7 @@
                         @Html.DisplayFor(modelItem => item.customer.Address)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Famous_Hotel.Address)
+                        @Html.DisplayFor(modelItem => item.Hotel.Address)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Attraction.Attraction_Address)

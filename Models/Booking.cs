@@ -18,8 +18,8 @@ namespace New_Zealand_MVC.Models
         public int CustomerId { get; set; }
         public Customer customer { get; set; }
         //this is Famous_Hotel foriegn key
-        public int Famous_HotelId { get; set; }
-        public Hotel Famous_Hotel { get; set; }
+        public int HotelId { get; set; }
+        public Hotel Hotel { get; set; }
         //this is Attraction foriegn key
         public int AttractionId { get; set; }
         public Attraction Attraction { get; set; }

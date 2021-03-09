@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +10,8 @@ namespace New_Zealand_MVC.Data
 {
     public class New_Zealand_MVCDatabase : DbContext
     {
+        internal IEnumerable Hotel;
+
         public New_Zealand_MVCDatabase (DbContextOptions<New_Zealand_MVCDatabase> options)
             : base(options)
         {

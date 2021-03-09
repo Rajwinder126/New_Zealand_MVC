@@ -22,7 +22,7 @@ namespace New_Zealand_MVC.Controllers
         // GET: Bookings
         public async Task<IActionResult> Index()
         {
-            var new_Zealand_MVCDatabase = _context.Booking.Include(b => b.Attraction).Include(b => b.Event).Include(b => b.Famous_Hotel).Include(b => b.customer);
+            var new_Zealand_MVCDatabase = _context.Booking.Include(b => b.Attraction).Include(b => b.Event).Include(b => b.Hotel).Include(b => b.customer);
             return View(await new_Zealand_MVCDatabase.ToListAsync());
         }
 
@@ -37,7 +37,7 @@ namespace New_Zealand_MVC.Controllers
             var booking = await _context.Booking
                 .Include(b => b.Attraction)
                 .Include(b => b.Event)
-                .Include(b => b.Famous_Hotel)
+                .Include(b => b.Hotel)
                 .Include(b => b.customer)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (booking == null)
@@ -53,7 +53,7 @@ namespace New_Zealand_MVC.Controllers
         {
             ViewData["AttractionId"] = new SelectList(_context.Attraction, "Id", "Attraction_Address");
             ViewData["EventId"] = new SelectList(_context.Event, "Id", "Event_Address");
-            ViewData["Famous_HotelId"] = new SelectList(_context.Famous_Hotel, "Id", "Address");
+            ViewData["HotelId"] = new SelectList(_context.Famous_Hotel, "Id", "Address");
             ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Address");
             return View();
         }
@@ -63,7 +63,7 @@ namespace New_Zealand_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,No_of_tickets,Ticket_price,CustomerId,Famous_HotelId,AttractionId,EventId")] Booking booking)
+        public async Task<IActionResult> Create([Bind("Id,No_of_tickets,Ticket_price,CustomerId,HotelId,AttractionId,EventId")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +73,7 @@ namespace New_Zealand_MVC.Controllers
             }
             ViewData["AttractionId"] = new SelectList(_context.Attraction, "Id", "Attraction_Address", booking.AttractionId);
             ViewData["EventId"] = new SelectList(_context.Event, "Id", "Event_Address", booking.EventId);
-            ViewData["Famous_HotelId"] = new SelectList(_context.Famous_Hotel, "Id", "Address", booking.Famous_HotelId);
+            ViewData["HotelId"] = new SelectList(_context.Famous_Hotel, "Id", "Address", booking.HotelId);
             ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Address", booking.CustomerId);
             return View(booking);
         }
@@ -93,7 +93,7 @@ namespace New_Zealand_MVC.Controllers
             }
             ViewData["AttractionId"] = new SelectList(_context.Attraction, "Id", "Attraction_Address", booking.AttractionId);
             ViewData["EventId"] = new SelectList(_context.Event, "Id", "Event_Address", booking.EventId);
-            ViewData["Famous_HotelId"] = new SelectList(_context.Famous_Hotel, "Id", "Address", booking.Famous_HotelId);
+            ViewData["HotelId"] = new SelectList(_context.Famous_Hotel, "Id", "Address", booking.HotelId);
             ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Address", booking.CustomerId);
             return View(booking);
         }
@@ -103,7 +103,7 @@ namespace New_Zealand_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,No_of_tickets,Ticket_price,CustomerId,Famous_HotelId,AttractionId,EventId")] Booking booking)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,No_of_tickets,Ticket_price,CustomerId,HotelId,AttractionId,EventId")] Booking booking)
         {
             if (id != booking.Id)
             {
@@ -132,7 +132,7 @@ namespace New_Zealand_MVC.Controllers
             }
             ViewData["AttractionId"] = new SelectList(_context.Attraction, "Id", "Attraction_Address", booking.AttractionId);
             ViewData["EventId"] = new SelectList(_context.Event, "Id", "Event_Address", booking.EventId);
-            ViewData["Famous_HotelId"] = new SelectList(_context.Famous_Hotel, "Id", "Address", booking.Famous_HotelId);
+            ViewData["HotelId"] = new SelectList(_context.Famous_Hotel, "Id", "Address", booking.HotelId);
             ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Address", booking.CustomerId);
             return View(booking);
         }
@@ -148,7 +148,7 @@ namespace New_Zealand_MVC.Controllers
             var booking = await _context.Booking
                 .Include(b => b.Attraction)
                 .Include(b => b.Event)
-                .Include(b => b.Famous_Hotel)
+                .Include(b => b.Hotel)
                 .Include(b => b.customer)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (booking == null)
