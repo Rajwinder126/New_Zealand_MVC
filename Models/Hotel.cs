@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace New_Zealand_MVC.Models
     //New Zealand famous hotals details are showed by this class
 {
-    public class Famous_Hotel
+    public class Hotel
     {
         public int Id { get; set; }
         [Required]

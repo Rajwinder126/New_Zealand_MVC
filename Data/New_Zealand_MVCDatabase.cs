@@ -20,7 +20,7 @@ namespace New_Zealand_MVC.Data
 
         public DbSet<New_Zealand_MVC.Models.Event> Event { get; set; }
 
-        public DbSet<New_Zealand_MVC.Models.Famous_Hotel> Famous_Hotel { get; set; }
+        public DbSet<New_Zealand_MVC.Models.Hotel> Famous_Hotel { get; set; }
 
         public DbSet<New_Zealand_MVC.Models.Booking> Booking { get; set; }
     }

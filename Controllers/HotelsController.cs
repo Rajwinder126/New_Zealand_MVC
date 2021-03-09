@@ -10,22 +10,22 @@ using New_Zealand_MVC.Models;
 
 namespace New_Zealand_MVC.Controllers
 {
-    public class Famous_HotelController : Controller
+    public class HotelsController : Controller
     {
         private readonly New_Zealand_MVCDatabase _context;
 
-        public Famous_HotelController(New_Zealand_MVCDatabase context)
+        public HotelsController(New_Zealand_MVCDatabase context)
         {
             _context = context;
         }
 
-        // GET: Famous_Hotel
+        // GET: Hotels
         public async Task<IActionResult> Index()
         {
             return View(await _context.Famous_Hotel.ToListAsync());
         }
 
-        // GET: Famous_Hotel/Details/5
+        // GET: Hotels/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace New_Zealand_MVC.Controllers
                 return NotFound();
             }
 
-            var famous_Hotel = await _context.Famous_Hotel
+            var hotel = await _context.Famous_Hotel
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (famous_Hotel == null)
+            if (hotel == null)
             {
                 return NotFound();
             }
 
-            return View(famous_Hotel);
+            return View(hotel);
         }
 
-        // GET: Famous_Hotel/Create
+        // GET: Hotels/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Famous_Hotel/Create
+        // POST: Hotels/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Hotal_Name,Address,Room_Price,Room_Type")] Famous_Hotel famous_Hotel)
+        public async Task<IActionResult> Create([Bind("Id,Hotal_Name,Address,Room_Price,Room_Type")] Hotel hotel)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(famous_Hotel);
+                _context.Add(hotel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(famous_Hotel);
+            return View(hotel);
         }
 
-        // GET: Famous_Hotel/Edit/5
+        // GET: Hotels/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace New_Zealand_MVC.Controllers
                 return NotFound();
             }
 
-            var famous_Hotel = await _context.Famous_Hotel.FindAsync(id);
-            if (famous_Hotel == null)
+            var hotel = await _context.Famous_Hotel.FindAsync(id);
+            if (hotel == null)
             {
                 return NotFound();
             }
-            return View(famous_Hotel);
+            return View(hotel);
         }
 
-        // POST: Famous_Hotel/Edit/5
+        // POST: Hotels/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Hotal_Name,Address,Room_Price,Room_Type")] Famous_Hotel famous_Hotel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Hotal_Name,Address,Room_Price,Room_Type")] Hotel hotel)
         {
-            if (id != famous_Hotel.Id)
+            if (id != hotel.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace New_Zealand_MVC.Controllers
             {
                 try
                 {
-                    _context.Update(famous_Hotel);
+                    _context.Update(hotel);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!Famous_HotelExists(famous_Hotel.Id))
+                    if (!HotelExists(hotel.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace New_Zealand_MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(famous_Hotel);
+            return View(hotel);
         }
 
-        // GET: Famous_Hotel/Delete/5
+        // GET: Hotels/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,28 +124,28 @@ namespace New_Zealand_MVC.Controllers
                 return NotFound();
             }
 
-            var famous_Hotel = await _context.Famous_Hotel
+            var hotel = await _context.Famous_Hotel
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (famous_Hotel == null)
+            if (hotel == null)
             {
                 return NotFound();
             }
 
-            return View(famous_Hotel);
+            return View(hotel);
         }
 
-        // POST: Famous_Hotel/Delete/5
+        // POST: Hotels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var famous_Hotel = await _context.Famous_Hotel.FindAsync(id);
-            _context.Famous_Hotel.Remove(famous_Hotel);
+            var hotel = await _context.Famous_Hotel.FindAsync(id);
+            _context.Famous_Hotel.Remove(hotel);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool Famous_HotelExists(int id)
+        private bool HotelExists(int id)
         {
             return _context.Famous_Hotel.Any(e => e.Id == id);
         }
